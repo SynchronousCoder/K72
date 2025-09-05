@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: font1;
+  src: url(../public/fonts/Lausanne-300.woff2);
+}
+@font-face {
+  font-family: font2;
+  src: url(../public/fonts/Lausanne-500.woff2);
+}
+
+.section3 .card1{
+  overflow-x: hidden;
+  scrollbar-width: none;
+}
+
+.moveLink {
+  transform: translateY(-100%);
+  transition: all 0.2s linear;
+}
+.link:hover .moveLink {
+  transform: translateY(0vw);
+}
+.link:hover .moveX {
+  animation-play-state: running;
+  /* transition: all linear .2s;
+  opacity: 1; */
+}
+
+.moveX {
+  animation-delay: 1;
+  animation-name: moveAnimation;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+}
+@keyframes moveAnimation {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+/* .firstName{
+  animation-name: cardFirstName;
+  animation-duration: 17s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.lastName{
+  animation-name: cardLastName;
+  animation-duration: 17s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes cardFirstName {
+  from {
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-290vw);
+  }
+}
+
+@keyframes cardLastName {
+  from {
+    transform: translateX(0vw);
+  }
+  to{
+    transform: translateX(400vw);
+  }
+} */
+
+/* Replace your existing animations with these */
+
+.firstName {
+  animation: cardFirstName 14s linear infinite;
+}
+
+.lastName {
+  animation: cardLastName 14s linear infinite;
+}
+
+@keyframes cardFirstName {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes cardLastName {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.crossSign:hover{
+background-color: #D3FD50;
+}
+/* Ensure no scrollbars when fullscreen nav is open */
+body.nav-open {
+  overflow: hidden !important;
+}
